@@ -15,31 +15,31 @@ A multi-page Streamlit web app that collects student lifestyle, academic, emotio
 
 1. **Clone the repository:**
 
-\`\`\`bash
+```bash
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
-\`\`\`
+```
 
 2. **Create a virtual environment (optional but recommended):**
 
-\`\`\`bash
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\\Scripts\\activate
-\`\`\`
+```
 
 3. **Install dependencies:**
 
-\`\`\`bash
+```bash
 pip install -r requirements.txt
-\`\`\`
+```
 
 4. **Set up your \`.env\` file:**
 
 Create a \`.env\` file in the root folder and add your Gemini API key:
 
-\`\`\`ini
+```ini
 GEMINI_API_KEY=your-api-key-here
-\`\`\`
+```
 
 > **Never share or push this file. It’s ignored via \`.gitignore\`.**
 
@@ -58,9 +58,9 @@ After collecting responses, the app sends a prompt to **Gemini Pro (\`gemini-2.5
 
 ## Run the App
 
-\`\`\`bash
+```bash
 streamlit run app.py
-\`\`\`
+```
 
 Replace \`app.py\` with your actual Python file name if different.
 
@@ -70,14 +70,14 @@ Replace \`app.py\` with your actual Python file name if different.
 
 ## Project Structure
 
-\`\`\`
+```
 your-repo/
 ├── app.py               # Main Streamlit app
 ├── .env                 # Your local API key (not tracked)
 ├── .gitignore           # Ignores .env and other temp files
 ├── requirements.txt     # Python dependencies
 └── README.md            # This file
-\`\`\`
+```
 
 ##FAQ
 
