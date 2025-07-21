@@ -41,21 +41,21 @@ def page_lifestyle():
     st.subheader("Step 2: Lifestyle Metrics")
 
     with st.form("form_lifestyle"):
-        st.markdown("###Sleep Habits")
+        st.markdown("### Sleep Habits")
         sleep_hours = st.slider("Average sleep per night (hours)", 0, 12, 7)
         sleep_quality = st.selectbox("How would you rate your sleep quality?", ["Poor", "Fair", "Good", "Excellent"])
         sleep_consistency = st.selectbox("Is your sleep schedule consistent?", ["Yes", "No"])
 
-        st.markdown("###Diet & Nutrition")
+        st.markdown("### Diet & Nutrition")
         meals = st.selectbox("How many meals do you eat daily?", ["1", "2", "3", "More than 3"])
         diet_quality = st.selectbox("How would you rate your overall diet?", ["Poor", "Average", "Healthy"])
         caffeine = st.selectbox("Do you consume caffeine daily (coffee, energy drinks)?", ["No", "Yes"])
 
-        st.markdown("###Physical Activity")
+        st.markdown("### Physical Activity")
         exercise_freq = st.selectbox("How often do you exercise?", ["Never", "1–2x/week", "3–5x/week", "Daily"])
         sedentary_time = st.slider("Average hours spent sitting per day", 0, 16, 6)
 
-        st.markdown("###Digital Behavior")
+        st.markdown("### Digital Behavior")
         screen_time = st.slider("Total screen time per day (hours)", 0, 16, 6)
         social_media_time = st.slider("Social media usage per day (hours)", 0, 12, 3)
         screen_before_sleep = st.selectbox("Do you use screens right before sleeping?", ["Yes", "No"])
@@ -83,13 +83,13 @@ def page_academic():
     st.subheader("Step 3: Academic & Routine Metrics")
 
     with st.form("form_academic"):
-        st.markdown("###Academic Load")
+        st.markdown("### Academic Load")
         courses = st.slider("Number of enrolled courses", 1, 10, 5)
         study_hours = st.slider("Average study hours per day", 0, 12, 3)
         academic_stress = st.select_slider("How much academic stress do you feel?",
                                            options=["None", "Low", "Moderate", "High", "Extreme"])
 
-        st.markdown("###Time Management")
+        st.markdown("### Time Management")
         routine_regular = st.selectbox("Do you follow a daily routine?", ["Yes", "No", "Sometimes"])
         procrastination = st.selectbox("Do you frequently procrastinate?", ["Never", "Sometimes", "Often", "Always"])
         productive_hours = st.slider("How many productive hours do you have per day?", 0, 12, 4)
@@ -112,13 +112,13 @@ def page_emotional():
     st.subheader("Step 4: Emotional & Social Well-being")
 
     with st.form("form_emotional"):
-        st.markdown("###Mood & Mental State")
+        st.markdown("### Mood & Mental State")
         mood_level = st.slider("Rate your average mood (1 = bad, 10 = great)", 1, 10, 6)
         mental_health_score = st.slider("Rate your overall mental health (1 = poor, 10 = excellent)", 1, 10, 5)
         anxiety_level = st.select_slider("How often do you feel anxious?",
                                          ["Never", "Rarely", "Sometimes", "Often", "Always"])
 
-        st.markdown("###Social Connection")
+        st.markdown("### Social Connection")
         loneliness = st.selectbox("Do you feel lonely?", ["Never", "Rarely", "Sometimes", "Often", "Always"])
         social_time = st.slider("Hours spent with friends/family per week", 0, 40, 5)
         has_support = st.selectbox("Do you have someone to talk to about problems?", ["Yes", "No", "Sometimes"])
@@ -141,17 +141,17 @@ def page_environment():
     st.subheader("Step 5: Environment, Health, and Financial Factors")
 
     with st.form("form_environment"):
-        st.markdown("###Living Environment")
+        st.markdown("### Living Environment")
         roommate_conflict = st.selectbox("Do you have conflicts with roommates?", ["No", "Occasionally", "Frequently"])
         noise_level = st.selectbox("Is your environment noisy?", ["Quiet", "Sometimes noisy", "Very noisy"])
         comfort = st.selectbox("Do you feel comfortable and safe in your space?", ["Yes", "No", "Sometimes"])
 
-        st.markdown("###Financial Stress")
+        st.markdown("### Financial Stress")
         part_time = st.selectbox("Do you work a part-time job?", ["No", "Yes"])
         work_hours = st.slider("How many hours/week do you work (if applicable)?", 0, 40, 0)
         financial_stress = st.selectbox("Do you feel financial pressure?", ["No", "Somewhat", "Yes"])
 
-        st.markdown("###Physical Health & Habits")
+        st.markdown("### Physical Health & Habits")
         chronic_conditions = st.selectbox("Do you have any chronic illnesses?", ["No", "Yes"])
         checkups = st.selectbox("Do you get regular health check-ups?", ["Yes", "No"])
         substance_use = st.selectbox("Do you use any substances (alcohol, tobacco, drugs)?", ["No", "Sometimes", "Frequently"])
@@ -185,6 +185,7 @@ def page_result():
             {st.session_state.responses}
 
             Please provide:
+            - Don't use stickers
             - A concise summary of the student's current mental health condition.
             - 2-3 personalized suggestions to improve their lifestyle or well-being.
             - Any critical concerns visible in the data.
