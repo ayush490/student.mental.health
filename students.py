@@ -6,8 +6,6 @@ import os
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
 
-
-# API_KEY = "AIzaSyCdkMuCrGG-UdW_NmgmztF9tH0PughT0z8"
 client = genai.Client(api_key=API_KEY)
 
 if 'page' not in st.session_state:
