@@ -174,7 +174,7 @@ def page_environment():
             next_page()
 
 def page_result():
-    st.subheader("Mental Health Summary")
+    st.subheader("Student's Health Summary")
 
     with st.spinner("Analyzing your data ."):
         prompt = f"""
@@ -190,7 +190,7 @@ def page_result():
             - 2-3 personalized suggestions to improve their lifestyle or well-being.
             - Any critical concerns visible in the data.
             - Talk like a professional adviser rather than talking like an AI. Don't start like Alright, Sure, Great. Start like Hii dear, Hey dude someting like this so that user feels like they are consulting from a doctor rather than an AI
-            - Use specific and accurate points rather than larger paragraph so that student don't get bored and can easily read and understand what a counsellor wants to say.
+            - Use specific and accurate points rather than larger paragraph so that student don't get bored and can easily read and understand what a counsellor wants to say. Conclude your points quickly rather than writing linger paragraphs. Write longer lines only wherever needed.
             - Talk like a counsellor, use easy language rather than more complex words.
             """
 
@@ -199,7 +199,7 @@ def page_result():
                 model="gemini-2.5-pro",
                 contents=[prompt]
             )
-            st.markdown("###Feedback Report")
+            st.markdown("### Feedback Report")
             st.write(response.text)
         except Exception as e:
             st.error(f"Error calling Gemini API: {e}")
