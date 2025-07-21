@@ -3,7 +3,7 @@ cat <<EOF > README.md
 
 A multi-page Streamlit web app that collects student lifestyle, academic, emotional, and environmental metrics — then uses **Gemini AI (LLM)** to provide personalized mental health insights and suggestions.
 
-## 🚀 Features
+## Features
 
 - Google-Form-like multi-page input experience  
 - Collects detailed lifestyle, academic, social, and emotional data  
@@ -79,7 +79,7 @@ your-repo/
 └── README.md            # This file
 ```
 
-##FAQ
+## FAQ
 
 **Q: Can I add charts or risk scoring?**  
 Yes! Just ask Gemini to return a JSON with tags and visualize with \`st.bar_chart\`.
@@ -87,12 +87,12 @@ Yes! Just ask Gemini to return a JSON with tags and visualize with \`st.bar_char
 **Q: Is my data stored?**  
 Not unless you build in logging or export features — currently all local/session-based.
 
-##Author
+## Author
 
 Made by Ayush Gohel  
 > For SDE3 – Mental Health & AI Project
 
-##License
+## License
 
 This project is open-source under the MIT License.
 EOF
