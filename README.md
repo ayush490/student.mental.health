@@ -1,4 +1,3 @@
-cat <<EOF > README.md
 # Student Lifestyle & Mental Health Analyzer
 
 A multi-page Streamlit web app that collects student lifestyle, academic, emotional, and environmental metrics — then uses **Gemini AI (LLM)** to provide personalized mental health insights and suggestions.
