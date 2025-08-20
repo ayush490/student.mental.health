@@ -1,12 +1,11 @@
 import streamlit as st
-from google import genai
+from google import generativeai as genai
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 API_KEY = st.secrets.get("GEMINI_API_KEY", os.getenv("GEMINI_API_KEY"))
-
-client = genai.Client(api_key=API_KEY)
+genai.configure(api_key=API_KEY)
 
 if 'page' not in st.session_state:
     st.session_state.page = 0
@@ -195,12 +194,17 @@ def page_result():
             """
 
         try:
-            response = client.models.generate_content(
-                model="gemini-2.5-pro",
-                contents=[prompt]
-            )
-            st.markdown("### Feedback Report")
-            st.write(response.text)
+            model = genai.GenerativeModel("gemini-2.5-pro")
+            response = model.generate_content(prompt)
+
+            # Check if the model returned valid content
+            if response.candidates and response.candidates[0].content.parts:
+                st.markdown("### Feedback Report")
+                st.write(response.text)
+            else:
+                finish_reason = response.candidates[0].finish_reason if response.candidates else "unknown"
+                st.warning("The model returned no content.")
+                st.info(f"Finish reason: {finish_reason}")
         except Exception as e:
             st.error(f"Error calling Gemini API: {e}")
 
