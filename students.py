@@ -1,5 +1,5 @@
 import streamlit as st
-from google import generativeai as genai
+import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 
@@ -222,3 +222,4 @@ PAGES = [
 ]
 
 PAGES[st.session_state.page]()
+
